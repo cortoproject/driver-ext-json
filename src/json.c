@@ -9,13 +9,13 @@
 #include <driver/ext/json/json.h>
 
 static int json_loadFile(corto_string file, int argc, char* argv[], void* ctx) {
-    corto_component_push("json");
-    char *json = corto_fileLoad(file);
+    corto_log_push("json");
+    char *json = corto_file_load(file);
     if (!json) {
-        corto_seterr("cannot find file '%s'", file);
+        corto_throw("cannot find file '%s'", file);
         goto error;
     }
-    corto_component_pop();
+    corto_log_pop();
     int result = json_toObject(NULL, json);
     corto_dealloc(json);
     return result;
@@ -25,9 +25,9 @@ error:
 
 int cortomain(int argc, char *argv[]) {
 
-    corto_component_push("json");
+    corto_log_push("json");
     corto_load_register("json", json_loadFile, NULL);
-    corto_component_pop();
+    corto_log_pop();
 
     return 0;
 }
