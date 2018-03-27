@@ -16,7 +16,7 @@ static int json_loadFile(corto_string file, int argc, char* argv[], void* ctx) {
         goto error;
     }
     corto_log_pop();
-    int result = json_toObject(NULL, json);
+    int result = json_toObject(NULL, NULL, json);
     corto_dealloc(json);
     return result;
 error:
