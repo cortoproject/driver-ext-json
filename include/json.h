@@ -7,8 +7,8 @@
 #ifndef DRIVER_EXT_JSON_H
 #define DRIVER_EXT_JSON_H
 
-#include <corto/corto.h>
-#include <driver/fmt/json/json.h>
+#include <corto>
+#include <driver.fmt.json>
 
 /* $header() */
 /* Definitions that are required by package headers (native types) go here. */
