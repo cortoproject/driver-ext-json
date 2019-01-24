@@ -1,10 +1,9 @@
 {
-    "id": "driver/ext/json",
+    "id": "driver.ext.json",
     "type": "package",
     "value": {
         "author": "Sander Mertens",
         "description": "JSON file extension",
-        "managed": false,
-        "use": ["corto", "driver/fmt/json"]
+        "use": ["corto", "driver.fmt.json"]
     }
 }
